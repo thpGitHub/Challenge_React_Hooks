@@ -3,19 +3,48 @@
     height: 100px;
     text-align: center;
     margin: 10px;
+
+    position: relative;
   }
   
   .element button {
     margin-top: 15px;
     background: transparent;
     border: none;
+
+    position: absolute;
+    top: 0px;
+  }
+  .button_left {
+    left: 0px;
+  }
+  .button_right {
+    right: 0px;
+  }
+  .element img {
+    /* object-fit: content; */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
   
   .react-icons {
     vertical-align: middle;
-    color: rgb(34, 28, 39);
+    /* color: rgb(34, 28, 39); */
+    color: rgba(20, 19, 20, 0.2);
+    /* color: rgb(233, 230, 233); */
     height: 2em;
     width: 2em;
+    /* border: 2px solid white; */
+    /* border-radius: 50%; */
+    /* position: absolute;
+    top: 0px; */
+  }
+  .react-icons:hover {
+    color: rgb(255,127,80);
+  }
+  button svg {
+    stroke: crimson;
   }
   
   .element:nth-child(1) {
