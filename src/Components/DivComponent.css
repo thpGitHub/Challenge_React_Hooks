@@ -1,74 +1,58 @@
 .element {
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    margin: 10px;
+  width: 100px;
+  border: none;
+  height: 100px;
+  margin: 10px;
+  position: relative;
+  text-align: center;
+  background-color: rgb(214, 210, 210);
+}
 
-    position: relative;
-  }
-  
-  .element button {
-    margin-top: 15px;
-    background: transparent;
-    border: none;
+.element img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    position: absolute;
-    top: 0px;
-  }
-  .button_left {
-    left: 0px;
-  }
-  .button_right {
-    right: 0px;
-  }
-  .element img {
-    /* object-fit: content; */
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .react-icons {
-    vertical-align: middle;
-    /* color: rgb(34, 28, 39); */
-    color: rgba(20, 19, 20, 0.2);
-    /* color: rgb(233, 230, 233); */
-    height: 2em;
-    width: 2em;
-    /* border: 2px solid white; */
-    /* border-radius: 50%; */
-    /* position: absolute;
-    top: 0px; */
-  }
-  .react-icons:hover {
-    color: rgb(255,127,80);
-  }
-  button svg {
-    stroke: crimson;
-  }
-  
-  .element:nth-child(1) {
-    background-color: rgb(221, 148, 148);
-  }
-  .element:nth-child(2) {
-    background-color: rgb(143, 4, 4);
-  }
-  .element:nth-child(3) {
-    background-color: rgb(47, 125, 145);
-  }
-  .element:nth-child(4) {
-    background-color: rgb(202, 66, 202);
-  }
-  .element:nth-child(5) {
-    background-color: rgb(48, 134, 116);
-  }
-  .element:nth-child(6) {
-    background-color: rgb(174, 185, 68);
-  }
-  .element:nth-child(7) {
-    background-color: rgb(84, 126, 18);
-  }
-  .element:nth-child(8) {
-    background-color: rgb(248, 68, 68);
-  }
-  
+.element button {
+  border: none;
+  padding: 0px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 55%;
+}
+
+.button_left {
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.button_right {
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+}
+
+.button_up {
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button_down {
+  left: 50%;
+  bottom: 2px;
+  transform: translateX(-50%);
+}
+
+.react-icons {
+  color: rgba(20, 19, 20, 0.4);
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+}
+
+.react-icons:hover {
+  color: rgba(255, 127, 80, 0.5);
+}

@@ -8,7 +8,7 @@ export default function DivPages() {
 
   useEffect(() => {
     fetch(
-      "https://api.unsplash.com/search/photos?query=t&client_id=TI96M4j8W_9hTLmsq2t883On8hdZx6cHKAoA_eBIJrE&per_page=8"
+      "https://api.unsplash.com/search/photos?query=moto&client_id=TI96M4j8W_9hTLmsq2t883On8hdZx6cHKAoA_eBIJrE&per_page=8"
     )
       .then((response) => response.json())
       .then((data) => {
