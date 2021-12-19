@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./DivPage.css";
 import DivComponent from "../Components/DivComponent";
+import Search from "../Components/Search";
 
 export default function DivPages() {
   const [divsOrders, setDivsOrders] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
@@ -12,12 +13,12 @@ export default function DivPages() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log('datas',data)
-        setPhotos(data)
+        console.log("datas", data);
+        setPhotos(data);
         console.log(photos);
         // console.log(data.results[0].urls.thumb);
       });
-  },[]);
+  }, []);
 
   const handleChangeDivOrderLeft = (indexDiv) => {
     const divsOrders2 = [...divsOrders];
@@ -35,23 +36,26 @@ export default function DivPages() {
     divsOrders2[findIndexAfter] -= 1;
     divsOrders2[indexDiv] += 1;
     setDivsOrders(divsOrders2);
-    console.log('photos',photos)
+    console.log("photos", photos);
   };
 
   return (
-    <div id="container">
-      {divsOrders.map((divOrder, index) => (
-        <DivComponent
-          order={divOrder}
-          indexDiv={index}
-          key={index + 1}
-          onChangeDivOrderLeft={handleChangeDivOrderLeft}
-          onChangeDivOrderRight={handleChangeDivOrderRight}
-          photo={photos}
-        >
-          élément {index + 1}
-        </DivComponent>
-      ))}
-    </div>
+    <>
+      <Search />
+      <div id="container">
+        {divsOrders.map((divOrder, index) => (
+          <DivComponent
+            order={divOrder}
+            indexDiv={index}
+            key={index + 1}
+            onChangeDivOrderLeft={handleChangeDivOrderLeft}
+            onChangeDivOrderRight={handleChangeDivOrderRight}
+            photo={photos}
+          >
+            élément {index + 1}
+          </DivComponent>
+        ))}
+      </div>
+    </>
   );
 }

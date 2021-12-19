@@ -1,0 +1,16 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchInput {
+    height: 30px;
+}
+
+.search-photos {
+    height: 30px;
+}
+.react-icons-search {
+    height: 100%;
+}
