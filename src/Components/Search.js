@@ -19,7 +19,7 @@ export default function Search({ onChangeQuery }) {
   };
 
   return (
-    <form className="search-container">
+    <form className="search-container" onSubmit={handleChangeQuery}>
       {/* <form className="search-container" onSubmit={()=>handleChangeQuery}> */}
       {/* <form className="search-container" onSubmit={()=>onChangeQuery(searchInput)}> */}
       {console.log("in Search")}
@@ -31,7 +31,7 @@ export default function Search({ onChangeQuery }) {
         value={searchInput}
       />
       <IconContext.Provider value={{ className: "react-icons-search" }}>
-        <button className="search-photos" onClick={() => handleChangeQuery()}>
+        <button type="submit" className="search-photos">
           <MdImageSearch />
         </button>
       </IconContext.Provider>
