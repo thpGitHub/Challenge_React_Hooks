@@ -1,21 +1,40 @@
-import React from "react";
+import { useState } from "react";
 import "./Search.css";
 import { IconContext } from "react-icons";
 import { MdImageSearch } from "react-icons/md";
 
-export default function Search() {
+export default function Search({ onChangeQuery }) {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+    console.log("handleChange ===", searchInput);
+    console.log("e target value ===", e.target.value);
+  };
+
+  const handleChangeQuery = (e) => {
+    e.preventDefault();
+    onChangeQuery(searchInput);
+  };
+
   return (
-    <div className="search-container">
+    <form className="search-container">
+      {/* <form className="search-container" onSubmit={()=>handleChangeQuery}> */}
+      {/* <form className="search-container" onSubmit={()=>onChangeQuery(searchInput)}> */}
+      {console.log("in Search")}
       <input
         type="search"
-        className="searchInput"
+        className="search-input"
         placeholder="Search Photos ..."
+        onChange={handleChange}
+        value={searchInput}
       />
       <IconContext.Provider value={{ className: "react-icons-search" }}>
-        <button className="search-photos">
+        <button className="search-photos" onClick={() => handleChangeQuery()}>
           <MdImageSearch />
         </button>
       </IconContext.Provider>
-    </div>
+    </form>
   );
 }

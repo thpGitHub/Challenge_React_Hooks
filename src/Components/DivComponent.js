@@ -22,7 +22,7 @@ export default function DivComponent({
   // })
 
   useEffect(() => {
-    console.log("photo in useEffect", photo);
+    console.log("photo in useEffect DivComponent", photo);
     setPhotoDiv(photo);
   }, [photo]);
 
@@ -39,9 +39,10 @@ export default function DivComponent({
       <img
         src={
           photoDiv
-            ? photoDiv.results[indexDiv].urls.thumb
+            ? photoDiv[indexDiv].urls.thumb
             : console.log("noooon")
         }
+        alt="img"
       />
       <IconContext.Provider value={{ className: "react-icons" }}>
         {children}
