@@ -56,7 +56,7 @@ export default function DivComponent({
             />
           </button>
         )}
-        {order < 8 && (
+        {order < 9 && (
           <button
             onClick={() => handleRight(indexDiv)}
             className="button_right"

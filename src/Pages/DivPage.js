@@ -4,14 +4,14 @@ import DivComponent from "../Components/DivComponent";
 import Search from "../Components/Search";
 
 export default function DivPages() {
-  const [divsOrders, setDivsOrders] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
+  const [divsOrders, setDivsOrders] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   const [photos, setPhotos] = useState(null);
   const [query, setQuery] = useState("orange");
 
   useEffect(() => {
     console.log("2nd in useEffect of DivPage");
     fetch(
-      `https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_API_UNSPLASH_PUBLIC_KEY}&per_page=8`
+      `https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_API_UNSPLASH_PUBLIC_KEY}&per_page=9`
     )
       .then((response) => response.json())
       .then((data) => {
