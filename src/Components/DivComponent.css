@@ -1,7 +1,7 @@
 .element {
-  width: 100px;
+  width: 200px;
   border: none;
-  height: 100px;
+  height: 200px;
   margin: 10px;
   position: relative;
   text-align: center;
@@ -24,26 +24,26 @@
 }
 
 .button_left {
-  left: 2px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .button_right {
   top: 50%;
-  right: 2px;
+  right: 10px;
   transform: translateY(-50%);
 }
 
 .button_up {
-  top: 2px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .button_down {
   left: 50%;
-  bottom: 2px;
+  bottom: 10px;
   transform: translateX(-50%);
 }
 

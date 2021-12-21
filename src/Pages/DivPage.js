@@ -11,7 +11,7 @@ export default function DivPages() {
   useEffect(() => {
     console.log("2nd in useEffect of DivPage");
     fetch(
-      `https://api.unsplash.com/search/photos?query=${query}&client_id=TI96M4j8W_9hTLmsq2t883On8hdZx6cHKAoA_eBIJrE&per_page=8`
+      `https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_API_UNSPLASH_PUBLIC_KEY}&per_page=8`
     )
       .then((response) => response.json())
       .then((data) => {

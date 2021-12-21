@@ -17,9 +17,6 @@ export default function DivComponent({
   photo,
 }) {
   const [photoDiv, setPhotoDiv] = useState();
-  // const [photoDiv, setPhotoDiv] = useState(() => {
-  //   photo
-  // })
 
   useEffect(() => {
     console.log("photo in useEffect DivComponent", photo);
@@ -39,13 +36,14 @@ export default function DivComponent({
       <img
         src={
           photoDiv
-            ? photoDiv[indexDiv].urls.thumb
+            // ? photoDiv[indexDiv].urls.thumb
+            ? photoDiv[indexDiv].urls.small
             : console.log("noooon")
         }
         alt="img"
       />
       <IconContext.Provider value={{ className: "react-icons" }}>
-        {children}
+        {/* {children} */}
         {console.log("photooooo", photo)}
         {order > 1 && (
           <button onClick={() => handleLeft(indexDiv)} className="button_left">

@@ -16,6 +16,7 @@ export default function Search({ onChangeQuery }) {
   const handleChangeQuery = (e) => {
     e.preventDefault();
     onChangeQuery(searchInput);
+    setSearchInput("");
   };
 
   return (
@@ -26,12 +27,12 @@ export default function Search({ onChangeQuery }) {
       <input
         type="search"
         className="search-input"
-        placeholder="Search Photos ..."
+        placeholder=" Search Photos ..."
         onChange={handleChange}
         value={searchInput}
       />
       <IconContext.Provider value={{ className: "react-icons-search" }}>
-        <button type="submit" className="search-photos">
+        <button type="submit" className="search-button">
           <MdImageSearch />
         </button>
       </IconContext.Provider>

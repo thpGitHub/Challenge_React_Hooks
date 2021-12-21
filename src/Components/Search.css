@@ -1,18 +1,28 @@
 .search-container {
+  margin: 2rem 2rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .search-input {
+  border: 1px solid #4c768d;
   height: 30px;
   border-radius: 10px 0 0 10px;
+  outline: none;
+  padding-left: 1rem;
 }
 
-.search-photos {
+.search-button {
+  border: none;
+  cursor: pointer;
   height: 30px;
+  padding: 1px 6px 1px 6px;
   border-radius: 0 10px 10px 0;
+  background-color: #4c768d;
 }
+
 .react-icons-search {
+  fill: #fff;
   height: 100%;
 }
