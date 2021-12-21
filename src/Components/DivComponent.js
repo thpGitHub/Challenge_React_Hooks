@@ -48,11 +48,11 @@ export default function DivComponent({
         {order > 1 && (
           <button onClick={() => handleLeft(indexDiv)} className="button_left">
             <BsFillArrowLeftCircleFill
-              style={{
-                stroke: "rgba(233, 230, 233, 0.4)",
-                strokeWidth: "0.3",
-                borderRadius: "50%",
-              }}
+              // style={{
+              //   stroke: "rgba(233, 230, 233, 0.4)",
+              //   strokeWidth: "0.3",
+              //   borderRadius: "50%",
+              // }}
             />
           </button>
         )}
@@ -62,30 +62,30 @@ export default function DivComponent({
             className="button_right"
           >
             <BsFillArrowRightCircleFill
-              style={{
-                stroke: "rgba(233, 230, 233, 0.4)",
-                strokeWidth: "0.3",
-                borderRadius: "50%",
-              }}
+              // style={{
+              //   stroke: "rgba(233, 230, 233, 0.4)",
+              //   strokeWidth: "0.3",
+              //   borderRadius: "50%",
+              // }}
             />
           </button>
         )}
         <button onClick={() => handleLeft(indexDiv)} className="button_up">
           <BsFillArrowUpCircleFill
-            style={{
-              stroke: "rgba(233, 230, 233, 0.4)",
-              strokeWidth: "0.3",
-              borderRadius: "50%",
-            }}
+            // style={{
+            //   stroke: "rgba(233, 230, 233, 0.4)",
+            //   strokeWidth: "0.3",
+            //   borderRadius: "50%",
+            // }}
           />
         </button>
         <button onClick={() => handleLeft(indexDiv)} className="button_down">
           <BsFillArrowDownCircleFill
-            style={{
-              stroke: "rgba(233, 230, 233, 0.4)",
-              strokeWidth: "0.3",
-              borderRadius: "50%",
-            }}
+            // style={{
+            //   stroke: "rgba(233, 230, 233, 0.4)",
+            //   strokeWidth: "0.3",
+            //   borderRadius: "50%",
+            // }}
           />
         </button>
       </IconContext.Provider>

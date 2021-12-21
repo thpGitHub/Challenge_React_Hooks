@@ -6,7 +6,7 @@ import Search from "../Components/Search";
 export default function DivPages() {
   const [divsOrders, setDivsOrders] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
   const [photos, setPhotos] = useState(null);
-  const [query, setQuery] = useState("moto");
+  const [query, setQuery] = useState("orange");
 
   useEffect(() => {
     console.log("2nd in useEffect of DivPage");

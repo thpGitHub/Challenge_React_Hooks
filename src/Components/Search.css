@@ -6,11 +6,11 @@
 }
 
 .search-input {
-  border: 1px solid #4c768d;
+  border: 1px solid rgb(76, 118, 141);
   height: 30px;
-  border-radius: 10px 0 0 10px;
   outline: none;
   padding-left: 1rem;
+  border-radius: 10px 0 0 10px;
 }
 
 .search-button {
@@ -19,10 +19,10 @@
   height: 30px;
   padding: 1px 6px 1px 6px;
   border-radius: 0 10px 10px 0;
-  background-color: #4c768d;
+  background-color: rgb(76, 118, 141);
 }
 
 .react-icons-search {
-  fill: #fff;
+  fill: rgb(255, 255, 255);
   height: 100%;
 }

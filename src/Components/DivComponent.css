@@ -15,18 +15,19 @@
 }
 
 .element button {
-  border: none;
+  border: 0.1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
   padding: 0px;
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 55%;
+  border-radius: 50%;
 }
 
 .button_left {
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
+  
 }
 
 .button_right {
@@ -51,7 +52,10 @@
   color: rgba(20, 19, 20, 0.4);
   width: 2em;
   height: 2em;
+  stroke: rgba(233, 230, 233, 0.4);
+  stroke-width: 0.3;
   vertical-align: middle;
+  
 }
 
 .react-icons:hover {
