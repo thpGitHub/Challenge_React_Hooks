@@ -15,6 +15,7 @@ export default function DivComponent({
   onChangeDivOrderLeft,
   onChangeDivOrderRight,
   onChangeDivOrderUp,
+  onChangeDivOrderDown,
   photo,
 }) {
   const [photoDiv, setPhotoDiv] = useState();
@@ -30,8 +31,11 @@ export default function DivComponent({
   const handleRight = (indexDiv) => {
     onChangeDivOrderRight(indexDiv);
   };
-  const handleUp = (indexDiv) => {
-    onChangeDivOrderUp(indexDiv);
+  const handleUp = (indexDiv, order) => {
+    onChangeDivOrderUp(indexDiv, order);
+  };
+  const handleDown = (indexDiv, order) => {
+    onChangeDivOrderDown(indexDiv, order);
   };
 
   return (
@@ -51,13 +55,7 @@ export default function DivComponent({
         {console.log("photooooo", photo)}
         {order > 1 && (
           <button onClick={() => handleLeft(indexDiv)} className="button_left">
-            <BsFillArrowLeftCircleFill
-            // style={{
-            //   stroke: "rgba(233, 230, 233, 0.4)",
-            //   strokeWidth: "0.3",
-            //   borderRadius: "50%",
-            // }}
-            />
+            <BsFillArrowLeftCircleFill/>
           </button>
         )}
         {order < 9 && (
@@ -65,10 +63,10 @@ export default function DivComponent({
             <BsFillArrowRightCircleFill />
           </button>
         )}
-        <button onClick={() => handleUp(indexDiv)} className="button_up">
+        <button onClick={() => handleUp(indexDiv, order)} className="button_up">
           <BsFillArrowUpCircleFill />
         </button>
-        <button onClick={() => handleLeft(indexDiv)} className="button_down">
+        <button onClick={() => handleDown(indexDiv, order)} className="button_down">
           <BsFillArrowDownCircleFill />
         </button>
       </IconContext.Provider>
