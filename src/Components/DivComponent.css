@@ -4,6 +4,7 @@
   height: 200px;
   margin: 10px;
   position: relative;
+  box-shadow: 5px 5px 13px #929292, -5px -5px 13px #ffffff;
   text-align: center;
   background-color: rgb(214, 210, 210);
 }
@@ -27,7 +28,6 @@
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  
 }
 
 .button_right {
@@ -55,7 +55,6 @@
   stroke: rgba(233, 230, 233, 0.4);
   stroke-width: 0.3;
   vertical-align: middle;
-  
 }
 
 .react-icons:hover {

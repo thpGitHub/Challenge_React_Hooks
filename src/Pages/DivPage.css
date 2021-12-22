@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 70rem;
+  box-shadow: 5px 5px 13px #929292, -5px -5px 13px #ffffff;
   min-height: 70rem;
   align-items: center;
   flex-direction: row;
