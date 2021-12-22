@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./DivPage.css";
 import DivComponent from "../Components/DivComponent";
 import Search from "../Components/Search";
+import useDimension from "../Hooks/useDimension";
 
 export default function DivPages() {
   const [divsOrders, setDivsOrders] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
@@ -18,6 +19,9 @@ export default function DivPages() {
         setPhotos(data.results);
       });
   }, [query]);
+
+  const browserWidth = useDimension();
+  console.log(browserWidth);
 
   const handleChangeDivOrderLeft = (indexDiv) => {
     const divsOrders2 = [...divsOrders];
@@ -38,6 +42,12 @@ export default function DivPages() {
     // console.log("photos", photos);
   };
 
+  const handleChangeDivOrderUp = (indexDiv) => {
+    if (browserWidth >= 680) {
+      console.log('yeppp 680 or more');
+    }
+  };
+
   const handleChangeQuery = (changeQuery) => {
     setQuery(changeQuery);
     // console.log("props changeQuery in divpage ===", changeQuery);
@@ -55,6 +65,7 @@ export default function DivPages() {
             key={index + 1}
             onChangeDivOrderLeft={handleChangeDivOrderLeft}
             onChangeDivOrderRight={handleChangeDivOrderRight}
+            onChangeDivOrderUp={handleChangeDivOrderUp}
             photo={photos}
           >
             élément {index + 1}

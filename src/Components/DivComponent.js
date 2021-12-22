@@ -14,6 +14,7 @@ export default function DivComponent({
   indexDiv,
   onChangeDivOrderLeft,
   onChangeDivOrderRight,
+  onChangeDivOrderUp,
   photo,
 }) {
   const [photoDiv, setPhotoDiv] = useState();
@@ -29,6 +30,9 @@ export default function DivComponent({
   const handleRight = (indexDiv) => {
     onChangeDivOrderRight(indexDiv);
   };
+  const handleUp = (indexDiv) => {
+    onChangeDivOrderUp(indexDiv);
+  };
 
   return (
     <div className="element" style={{ order: order }}>
@@ -36,8 +40,8 @@ export default function DivComponent({
       <img
         src={
           photoDiv
-            // ? photoDiv[indexDiv].urls.thumb
-            ? photoDiv[indexDiv].urls.small
+            ? // ? photoDiv[indexDiv].urls.thumb
+              photoDiv[indexDiv].urls.small
             : console.log("noooon")
         }
         alt="img"
@@ -48,45 +52,24 @@ export default function DivComponent({
         {order > 1 && (
           <button onClick={() => handleLeft(indexDiv)} className="button_left">
             <BsFillArrowLeftCircleFill
-              // style={{
-              //   stroke: "rgba(233, 230, 233, 0.4)",
-              //   strokeWidth: "0.3",
-              //   borderRadius: "50%",
-              // }}
+            // style={{
+            //   stroke: "rgba(233, 230, 233, 0.4)",
+            //   strokeWidth: "0.3",
+            //   borderRadius: "50%",
+            // }}
             />
           </button>
         )}
         {order < 9 && (
-          <button
-            onClick={() => handleRight(indexDiv)}
-            className="button_right"
-          >
-            <BsFillArrowRightCircleFill
-              // style={{
-              //   stroke: "rgba(233, 230, 233, 0.4)",
-              //   strokeWidth: "0.3",
-              //   borderRadius: "50%",
-              // }}
-            />
+          <button onClick={() => handleRight(indexDiv)} className="button_right">
+            <BsFillArrowRightCircleFill />
           </button>
         )}
-        <button onClick={() => handleLeft(indexDiv)} className="button_up">
-          <BsFillArrowUpCircleFill
-            // style={{
-            //   stroke: "rgba(233, 230, 233, 0.4)",
-            //   strokeWidth: "0.3",
-            //   borderRadius: "50%",
-            // }}
-          />
+        <button onClick={() => handleUp(indexDiv)} className="button_up">
+          <BsFillArrowUpCircleFill />
         </button>
         <button onClick={() => handleLeft(indexDiv)} className="button_down">
-          <BsFillArrowDownCircleFill
-            // style={{
-            //   stroke: "rgba(233, 230, 233, 0.4)",
-            //   strokeWidth: "0.3",
-            //   borderRadius: "50%",
-            // }}
-          />
+          <BsFillArrowDownCircleFill />
         </button>
       </IconContext.Provider>
     </div>
