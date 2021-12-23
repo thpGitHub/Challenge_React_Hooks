@@ -11,13 +11,13 @@ export default function DivPages() {
 
   useEffect(() => {
     console.log("2nd in useEffect of DivPage");
-    // fetch(
-    //   `https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_API_UNSPLASH_PUBLIC_KEY}&per_page=9`
-    // )
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setPhotos(data.results);
-    //   });
+    fetch(
+      `https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_API_UNSPLASH_PUBLIC_KEY}&per_page=9`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setPhotos(data.results);
+      });
   }, [query]);
 
   const browserWidth = useDimension();
@@ -296,6 +296,7 @@ export default function DivPages() {
             onChangeDivOrderUp={handleChangeDivOrderUp}
             onChangeDivOrderDown={handleChangeDivOrderDown}
             photo={photos}
+            browserWidth={browserWidth}
           >
             élément {index + 1}
           </DivComponent>

@@ -17,6 +17,7 @@ export default function DivComponent({
   onChangeDivOrderUp,
   onChangeDivOrderDown,
   photo,
+  browserWidth,
 }) {
   const [photoDiv, setPhotoDiv] = useState();
 
@@ -38,6 +39,174 @@ export default function DivComponent({
     onChangeDivOrderDown(indexDiv, order);
   };
 
+  const BrowserWidth = ({ browserWidth, order, width }) => {
+    if (browserWidth >= 680) {
+      
+      return (
+        <>
+          {order === 1 && (
+            <>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            <button onClick={() => handleDown(indexDiv, order)} className="button_down">
+            <BsFillArrowDownCircleFill />
+          </button>
+            </>
+          )}
+          {order >= 1 && order < 4 && (
+            <>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            <button onClick={() => handleDown(indexDiv, order)} className="button_down">
+            <BsFillArrowDownCircleFill />
+          </button>
+          <button onClick={() => handleLeft(indexDiv)} className="button_left">
+              <BsFillArrowLeftCircleFill />
+            </button>
+            </>
+          )}
+          {order > 3 && order < 7 && (
+            <>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            <button onClick={() => handleDown(indexDiv, order)} className="button_down">
+            <BsFillArrowDownCircleFill />
+          </button>
+          <button onClick={() => handleLeft(indexDiv)} className="button_left">
+              <BsFillArrowLeftCircleFill />
+            </button>
+            <button onClick={() => handleUp(indexDiv, order)} className="button_up">
+            <BsFillArrowUpCircleFill />
+          </button>
+            </>
+          )}
+          {order > 6 && order < 10 && (
+            <>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            
+          <button onClick={() => handleLeft(indexDiv)} className="button_left">
+              <BsFillArrowLeftCircleFill />
+            </button>
+            <button onClick={() => handleUp(indexDiv, order)} className="button_up">
+            <BsFillArrowUpCircleFill />
+          </button>
+            </>
+          )}
+        </>
+      );
+    } 
+    else if (browserWidth >= 460 && browserWidth < 680) {
+      
+      return (
+        <>
+          {order === 1 && (
+            <>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            <button onClick={() => handleDown(indexDiv, order)} className="button_down">
+            <BsFillArrowDownCircleFill />
+          </button>
+            </>
+          )}
+          {order === 2 && (
+            <>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            <button onClick={() => handleDown(indexDiv, order)} className="button_down">
+            <BsFillArrowDownCircleFill />
+          </button>
+          <button onClick={() => handleLeft(indexDiv)} className="button_left">
+              <BsFillArrowLeftCircleFill />
+            </button>
+            </>
+          )}
+          {order > 2 && order < 9 && (
+            <>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            <button onClick={() => handleDown(indexDiv, order)} className="button_down">
+            <BsFillArrowDownCircleFill />
+          </button>
+          <button onClick={() => handleLeft(indexDiv)} className="button_left">
+              <BsFillArrowLeftCircleFill />
+            </button>
+            <button onClick={() => handleUp(indexDiv, order)} className="button_up">
+            <BsFillArrowUpCircleFill />
+          </button>
+            </>
+          )}
+          {order === 9 && (
+            <>
+           
+            
+          <button onClick={() => handleLeft(indexDiv)} className="button_left">
+              <BsFillArrowLeftCircleFill />
+            </button>
+            <button onClick={() => handleUp(indexDiv, order)} className="button_up">
+            <BsFillArrowUpCircleFill />
+          </button>
+            </>
+          )}
+          {/* {order > 6 && order < 10 && (
+            <>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            
+          <button onClick={() => handleLeft(indexDiv)} className="button_left">
+              <BsFillArrowLeftCircleFill />
+            </button>
+            <button onClick={() => handleUp(indexDiv, order)} className="button_up">
+            <BsFillArrowUpCircleFill />
+          </button>
+            </>
+          )} */}
+        </>
+      );
+    }
+    else {return (
+      <>
+        {order === 1 && (
+            <>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            
+            </>
+          )}
+
+        {order > 1 && order < 9 && (
+            <>
+            <button onClick={() => handleLeft(indexDiv)} className="button_left">
+              <BsFillArrowLeftCircleFill />
+            </button>
+            <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            
+            </>
+          )}  
+
+        {order === 9 && (
+            <>
+            <button onClick={() => handleLeft(indexDiv)} className="button_left">
+              <BsFillArrowLeftCircleFill />
+            </button>
+            
+            </>
+          )}
+      </>
+    )}
+  };
+
   return (
     <div className="element" style={{ order: order }}>
       {/* <img src={photo ? photo[0].urls.thumb: console.log('noooon')}/> */}
@@ -51,24 +220,37 @@ export default function DivComponent({
         alt="img"
       />
       <IconContext.Provider value={{ className: "react-icons" }}>
+        {/* {browserWidth > 680 && ( */}
+          <>
+            
+            <BrowserWidth browserWidth={browserWidth} order={order} width={680}/>
+          </>
+         
+        {/* // )} */}
         {/* {children} */}
-        {console.log("photooooo", photo)}
+        {/* {console.log("photooooo", photo)}
         {order > 1 && (
           <button onClick={() => handleLeft(indexDiv)} className="button_left">
-            <BsFillArrowLeftCircleFill/>
+            <BsFillArrowLeftCircleFill />
           </button>
         )}
         {order < 9 && (
-          <button onClick={() => handleRight(indexDiv)} className="button_right">
+          <button
+            onClick={() => handleRight(indexDiv)}
+            className="button_right"
+          >
             <BsFillArrowRightCircleFill />
           </button>
         )}
         <button onClick={() => handleUp(indexDiv, order)} className="button_up">
           <BsFillArrowUpCircleFill />
         </button>
-        <button onClick={() => handleDown(indexDiv, order)} className="button_down">
+        <button
+          onClick={() => handleDown(indexDiv, order)}
+          className="button_down"
+        >
           <BsFillArrowDownCircleFill />
-        </button>
+        </button> */}
       </IconContext.Provider>
     </div>
   );
