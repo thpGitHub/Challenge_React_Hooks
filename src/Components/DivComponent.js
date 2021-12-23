@@ -7,6 +7,7 @@ import {
   BsFillArrowDownCircleFill,
   BsFillArrowUpCircleFill,
 } from "react-icons/bs";
+import DivButton from "./DivButton";
 
 export default function DivComponent({
   children,
@@ -39,6 +40,23 @@ export default function DivComponent({
     onChangeDivOrderDown(indexDiv, order);
   };
 
+  const handleDirection = (direction) => {
+        switch(direction) {
+            case "left" :
+                onChangeDivOrderLeft(indexDiv);
+                break;
+            case "right" :
+                onChangeDivOrderRight(indexDiv);
+                break
+            case "up" :
+                onChangeDivOrderUp(indexDiv);
+                break
+            case "down" :
+                onChangeDivOrderDown(indexDiv);
+                break
+        }
+  }
+
   const BrowserWidth = ({ browserWidth, order, width }) => {
     if (browserWidth >= 680) {
       
@@ -46,15 +64,58 @@ export default function DivComponent({
         <>
           {order === 1 && (
             <>
-            <button onClick={() => handleRight(indexDiv)} className="button_right">
+            {/* <button onClick={() => handleRight(indexDiv)} className="button_right">
               <BsFillArrowRightCircleFill />
             </button>
             <button onClick={() => handleDown(indexDiv, order)} className="button_down">
             <BsFillArrowDownCircleFill />
-          </button>
+          </button> */}
+                <DivButton handleDirection={handleDirection} direction='right' indexDiv={indexDiv} order={order}/>
+                <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
             </>
           )}
-          {order >= 1 && order < 4 && (
+          {order > 1 && order < 4 && (
+            <>
+                {/* <DivButton handleRight={handleRight} handleDown={handleDown} indexDiv={indexDiv} order={order}/> */}
+
+                <DivButton handleDirection={handleDirection} direction='left' indexDiv={indexDiv} order={order}/>
+                <DivButton handleDirection={handleDirection} direction='right' indexDiv={indexDiv} order={order}/>
+                <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
+            </>
+          )}
+          {order > 3 && order < 7 && (
+            <>
+                {/* <DivButton handleRight={handleRight} handleDown={handleDown} indexDiv={indexDiv} order={order}/> */}
+
+                <DivButton handleDirection={handleDirection} direction='left' indexDiv={indexDiv} order={order}/>
+                <DivButton handleDirection={handleDirection} direction='right' indexDiv={indexDiv} order={order}/>
+                <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
+                <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
+            </>
+          )}
+          {order > 6 && order < 9 && (
+            <>
+                {/* <DivButton handleRight={handleRight} handleDown={handleDown} indexDiv={indexDiv} order={order}/> */}
+
+                <DivButton handleDirection={handleDirection} direction='left' indexDiv={indexDiv} order={order}/>
+                <DivButton handleDirection={handleDirection} direction='right' indexDiv={indexDiv} order={order}/>
+                <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
+            </>
+          )}
+          {order === 9 && (
+            <>
+            {/* <button onClick={() => handleRight(indexDiv)} className="button_right">
+              <BsFillArrowRightCircleFill />
+            </button>
+            <button onClick={() => handleDown(indexDiv, order)} className="button_down">
+            <BsFillArrowDownCircleFill />
+          </button> */}
+                 <DivButton handleDirection={handleDirection} direction='left' indexDiv={indexDiv} order={order}/>
+                <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
+            </>
+          )}
+          
+          {/* {order >= 1 && order < 4 && (
             <>
             <button onClick={() => handleRight(indexDiv)} className="button_right">
               <BsFillArrowRightCircleFill />
@@ -154,7 +215,7 @@ export default function DivComponent({
             <BsFillArrowUpCircleFill />
           </button>
             </>
-          )}
+          )} */}
           {/* {order > 6 && order < 10 && (
             <>
             <button onClick={() => handleRight(indexDiv)} className="button_right">

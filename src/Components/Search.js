@@ -27,7 +27,7 @@ export default function Search({ onChangeQuery }) {
       <input
         type="search"
         className="search-input"
-        placeholder=" Search Photos ..."
+        placeholder=" Search Photos ...."
         onChange={handleChange}
         value={searchInput}
       />
