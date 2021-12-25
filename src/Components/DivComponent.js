@@ -49,10 +49,10 @@ export default function DivComponent({
                 onChangeDivOrderRight(indexDiv);
                 break
             case "up" :
-                onChangeDivOrderUp(indexDiv);
+                onChangeDivOrderUp(indexDiv, order);
                 break
             case "down" :
-                onChangeDivOrderDown(indexDiv);
+                onChangeDivOrderDown(indexDiv, order);
                 break
         }
   }
@@ -62,12 +62,12 @@ export default function DivComponent({
 
     return (
       <>
-        {/* {order === 1 && (
+         {order === 1 && (
             // <>
             <DivButton handleDirection={handleDirection} direction='right' indexDiv={indexDiv} order={order}/>     
            
           )}
-        {order > 1 && order < 9 && (
+       {order > 1 && order < 9 && (
             <>
             <DivButton handleDirection={handleDirection} direction='left' indexDiv={indexDiv} order={order}/>
             <DivButton handleDirection={handleDirection} direction='right' indexDiv={indexDiv} order={order}/>        
@@ -77,52 +77,72 @@ export default function DivComponent({
             // <>
             <DivButton handleDirection={handleDirection} direction='left' indexDiv={indexDiv} order={order}/>
             // </>
-          )}, */}
-
-
-          {browserWidth >= 680 && (
-            <h1>hjhjjkhkjhkhk</h1>,
-            order === 1 && (
-              <>
-                <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
-              </>
-            ),
-            order > 1 && order < 4 && (
-              // <>
-                <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
-              // </>
-            ),
-            order > 3 && order < 7 && (
-              <>
-                  <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
-                  <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
-              </>
-            ),
-            order > 6 && order < 9 && (
-              // <>
-                  <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
-              // </>
-            ),
-            order === 9 && (
-              // <>
-                  <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
-              // </>
-            )
           )}
-          {browserWidth >= 460 && browserWidth < 680 && (
+
+
+          {/* {browserWidth >= 680 && order === 1 && (
+            <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
+          )
+          } */}
+          {browserWidth >= 680 && order < 7 && (
+            <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
+          )
+          }
+          {browserWidth >= 680 && order >3 && order <=9 && (
+            <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
+          )
+          }
+          {browserWidth >= 460 && browserWidth < 680 && order < 9 && (
+            <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
+          )
+          }
+          {browserWidth >= 460 && browserWidth < 680 && order > 1 && (
+            <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
+          )
+          }
+             {/* {order === 1 && ( */}
+               {/* <>
+                 <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
+               </>
+             ) }{  */}
+            {/* //   order > 1 && order < 4 && (
+            //   // <>
+            //     <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
+            //   // </>
+            // )
+            // }
+            
+            // order > 3 && order < 7 && (
+            //   <>
+            //       <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
+            //       <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
+            //   </>
+            // ),
+            // order > 6 && order < 9 && (
+            //   // <>
+            //       <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
+            //   // </>
+            // ),
+            // order === 9 && (
+            //   // <>
+            //       <DivButton handleDirection={handleDirection} direction='up' indexDiv={indexDiv} order={order}/>
+            //   // </>
+            // )
+          // )} */}
+          {/* {browserWidth >= 460 && browserWidth < 680 && (
             order === 1 && (
               <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
-            ),
+            ) ||
             order === 2 && (
               <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
-            ),
+            ) ||
             order > 2 && order < 9 &&(
               <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
-            ),
+            )||
             order === 9 && (
               <DivButton handleDirection={handleDirection} direction='down' indexDiv={indexDiv} order={order}/>
             )
-          )}
+          )} */}
           {/* {order === 1 && (
             <>
                 <DivButton handleDirection={handleDirection} direction='right' indexDiv={indexDiv} order={order}/>

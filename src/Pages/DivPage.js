@@ -11,13 +11,13 @@ export default function DivPages() {
 
   useEffect(() => {
     console.log("2nd in useEffect of DivPage");
-    // fetch(
-    //   `https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_API_UNSPLASH_PUBLIC_KEY}&per_page=9`
-    // )
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     setPhotos(data.results);
-    //   });
+    fetch(
+      `https://api.unsplash.com/search/photos?query=${query}&client_id=${process.env.REACT_APP_API_UNSPLASH_PUBLIC_KEY}&per_page=9`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setPhotos(data.results);
+      });
   }, [query]);
 
   const browserWidth = useDimension();
@@ -39,7 +39,6 @@ export default function DivPages() {
     divsOrders2[findIndexAfter] -= 1;
     divsOrders2[indexDiv] += 1;
     setDivsOrders(divsOrders2);
-    // console.log("photos", photos);
   };
 
   const handleChangeDivOrderUp = (indexDiv, order) => {
@@ -49,49 +48,39 @@ export default function DivPages() {
      * browser Width de 680px = 3 div / row
      */
     if (browserWidth >= 680) {
-      console.log("yeppp 680 or more");
-      console.log("yeppp 680 or more", indexDiv);
-      console.log("yeppp 680 or more", order);
 
       switch (order) {
         case 4:
-          console.log("4");
           const findIndexPos1 = divsOrders2.indexOf(1);
-          console.log(findIndexPos1);
           divsOrders2[findIndexPos1] = 4;
           divsOrders2[indexDiv] = 1;
           setDivsOrders(divsOrders2);
           break;
         case 5:
-          console.log("5");
           const findIndexPos2 = divsOrders2.indexOf(2);
           divsOrders2[findIndexPos2] = 5;
           divsOrders2[indexDiv] = 2;
           setDivsOrders(divsOrders2);
           break;
         case 6:
-          console.log("6");
           const findIndexPos3 = divsOrders2.indexOf(3);
           divsOrders2[findIndexPos3] = 6;
           divsOrders2[indexDiv] = 3;
           setDivsOrders(divsOrders2);
           break;
         case 7:
-          console.log("7");
           const findIndexPos4 = divsOrders2.indexOf(4);
           divsOrders2[findIndexPos4] = 7;
           divsOrders2[indexDiv] = 4;
           setDivsOrders(divsOrders2);
           break;
         case 8:
-          console.log("8");
           const findIndexPos5 = divsOrders2.indexOf(5);
           divsOrders2[findIndexPos5] = 8;
           divsOrders2[indexDiv] = 5;
           setDivsOrders(divsOrders2);
           break;
         case 9:
-          console.log("9");
           const findIndexPos6 = divsOrders2.indexOf(6);
           divsOrders2[findIndexPos6] = 9;
           divsOrders2[indexDiv] = 6;
@@ -107,51 +96,43 @@ export default function DivPages() {
       console.log("460->6680");
 
       switch (order) {
-        case 3:
-          // console.log("4");
-          const findIndexPos1 = divsOrders2.indexOf(1);
-          console.log(findIndexPos1);
+        case 3:         
+          const findIndexPos1 = divsOrders2.indexOf(1);        
           divsOrders2[findIndexPos1] = 3;
           divsOrders2[indexDiv] = 1;
           setDivsOrders(divsOrders2);
           break;
-        case 4:
-          // console.log("5");
+        case 4:    
           const findIndexPos2 = divsOrders2.indexOf(2);
           divsOrders2[findIndexPos2] = 4;
           divsOrders2[indexDiv] = 2;
           setDivsOrders(divsOrders2);
           break;
-        case 5:
-          // console.log("6");
+        case 5:     
           const findIndexPos3 = divsOrders2.indexOf(3);
           divsOrders2[findIndexPos3] = 5;
           divsOrders2[indexDiv] = 3;
           setDivsOrders(divsOrders2);
           break;
-        case 6:
-          // console.log("7");
+        case 6:     
           const findIndexPos4 = divsOrders2.indexOf(4);
           divsOrders2[findIndexPos4] = 6;
           divsOrders2[indexDiv] = 4;
           setDivsOrders(divsOrders2);
           break;
         case 7:
-          // console.log("8");
           const findIndexPos5 = divsOrders2.indexOf(5);
           divsOrders2[findIndexPos5] = 7;
           divsOrders2[indexDiv] = 5;
           setDivsOrders(divsOrders2);
           break;
-        case 8:
-          // console.log("9");
+        case 8:    
           const findIndexPos6 = divsOrders2.indexOf(6);
           divsOrders2[findIndexPos6] = 8;
           divsOrders2[indexDiv] = 6;
           setDivsOrders(divsOrders2);
           break;
-        case 9:
-          // console.log("9");
+        case 9:   
           const findIndexPos8 = divsOrders2.indexOf(8);
           divsOrders2[findIndexPos8] = 9;
           divsOrders2[indexDiv] = 8;
@@ -278,8 +259,6 @@ export default function DivPages() {
 
   const handleChangeQuery = (changeQuery) => {
     setQuery(changeQuery);
-    // console.log("props changeQuery in divpage ===", changeQuery);
-    // alert(`in handleChangeQuery ${query}`);
   };
 
   return (
