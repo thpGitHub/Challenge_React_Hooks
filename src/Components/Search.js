@@ -9,8 +9,6 @@ export default function Search({ onChangeQuery }) {
   const handleChange = (e) => {
     e.preventDefault();
     setSearchInput(e.target.value);
-    console.log("handleChange ===", searchInput);
-    console.log("e target value ===", e.target.value);
   };
 
   const handleChangeQuery = (e) => {
@@ -21,9 +19,6 @@ export default function Search({ onChangeQuery }) {
 
   return (
     <form className="search-container" onSubmit={handleChangeQuery}>
-      {/* <form className="search-container" onSubmit={()=>handleChangeQuery}> */}
-      {/* <form className="search-container" onSubmit={()=>onChangeQuery(searchInput)}> */}
-      {console.log("in Search")}
       <input
         type="search"
         className="search-input"
