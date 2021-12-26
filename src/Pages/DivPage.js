@@ -3,6 +3,7 @@ import "./DivPage.css";
 import DivComponent from "../Components/DivComponent";
 import Search from "../Components/Search";
 import useDimension from "../Hooks/useDimension";
+import {ErrorBoundary} from 'react-error-boundary';
 
 export default function DivPages() {
   const [divsOrders, setDivsOrders] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
