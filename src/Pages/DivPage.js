@@ -3,7 +3,7 @@ import "./DivPage.css";
 import DivComponent from "../Components/DivComponent";
 import Search from "../Components/Search";
 import useDimension from "../Hooks/useDimension";
-import {ErrorBoundary} from 'react-error-boundary';
+// import {ErrorBoundary} from 'react-error-boundary';
 
 export default function DivPages() {
   const [divsOrders, setDivsOrders] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
@@ -18,6 +18,7 @@ export default function DivPages() {
       .then((response) => response.json())
       .then((data) => {
         setPhotos(data.results);
+        console.log("data result ===", data.results);
       });
   }, [query]);
 
@@ -49,7 +50,6 @@ export default function DivPages() {
      * browser Width de 680px = 3 div / row
      */
     if (browserWidth >= 680) {
-
       switch (order) {
         case 4:
           const findIndexPos1 = divsOrders2.indexOf(1);
@@ -97,25 +97,25 @@ export default function DivPages() {
       console.log("460->6680");
 
       switch (order) {
-        case 3:         
-          const findIndexPos1 = divsOrders2.indexOf(1);        
+        case 3:
+          const findIndexPos1 = divsOrders2.indexOf(1);
           divsOrders2[findIndexPos1] = 3;
           divsOrders2[indexDiv] = 1;
           setDivsOrders(divsOrders2);
           break;
-        case 4:    
+        case 4:
           const findIndexPos2 = divsOrders2.indexOf(2);
           divsOrders2[findIndexPos2] = 4;
           divsOrders2[indexDiv] = 2;
           setDivsOrders(divsOrders2);
           break;
-        case 5:     
+        case 5:
           const findIndexPos3 = divsOrders2.indexOf(3);
           divsOrders2[findIndexPos3] = 5;
           divsOrders2[indexDiv] = 3;
           setDivsOrders(divsOrders2);
           break;
-        case 6:     
+        case 6:
           const findIndexPos4 = divsOrders2.indexOf(4);
           divsOrders2[findIndexPos4] = 6;
           divsOrders2[indexDiv] = 4;
@@ -127,13 +127,13 @@ export default function DivPages() {
           divsOrders2[indexDiv] = 5;
           setDivsOrders(divsOrders2);
           break;
-        case 8:    
+        case 8:
           const findIndexPos6 = divsOrders2.indexOf(6);
           divsOrders2[findIndexPos6] = 8;
           divsOrders2[indexDiv] = 6;
           setDivsOrders(divsOrders2);
           break;
-        case 9:   
+        case 9:
           const findIndexPos8 = divsOrders2.indexOf(8);
           divsOrders2[findIndexPos8] = 9;
           divsOrders2[indexDiv] = 8;
@@ -261,10 +261,18 @@ export default function DivPages() {
   const handleChangeQuery = (changeQuery) => {
     setQuery(changeQuery);
   };
+  const ErrorDisplay = ({ error }) => {
+    return (
+      <div style={{ color: "red" }}>
+        Une erreur est survenue lors de la recherche
+      </div>
+    );
+  };
 
   return (
     <>
       <Search onChangeQuery={handleChangeQuery}></Search>
+      {/* <ErrorBoundary key={Math.random()} FallbackComponent={ErrorDisplay}> */}
       <div id="container">
         {divsOrders.map((divOrder, index) => (
           <DivComponent
@@ -282,6 +290,7 @@ export default function DivPages() {
           </DivComponent>
         ))}
       </div>
+      {/* </ErrorBoundary> */}
     </>
   );
 }

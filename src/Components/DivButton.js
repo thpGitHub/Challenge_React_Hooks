@@ -8,11 +8,7 @@ import {
   BsFillArrowUpCircleFill,
 } from "react-icons/bs";
 
-export default function DivButton({
-
-  handleDirection,
-  direction,
-}) {
+export default function DivButton({ handleDirection, direction }) {
   const handleIcons = (direction) => {
     switch (direction) {
       case "right":
@@ -31,13 +27,11 @@ export default function DivButton({
   };
 
   return (
-    
-      <button
-        onClick={() => handleDirection(direction)}
-        className={`button_${direction}`}
-      >
-        {handleIcons(direction)}
-      </button>
-    
+    <button
+      onClick={() => handleDirection(direction)}
+      className={`button_${direction}`}
+    >
+      {handleIcons(direction)}
+    </button>
   );
 }
