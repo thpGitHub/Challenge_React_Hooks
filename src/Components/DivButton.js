@@ -1,6 +1,6 @@
 import React from "react";
 import "./DivComponent.css";
-import { IconContext } from "react-icons";
+// import { IconContext } from "react-icons";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
@@ -13,16 +13,14 @@ export default function DivButton({ handleDirection, direction }) {
     switch (direction) {
       case "right":
         return <BsFillArrowRightCircleFill />;
-        break;
       case "left":
         return <BsFillArrowLeftCircleFill />;
-        break;
       case "up":
         return <BsFillArrowUpCircleFill />;
-        break;
       case "down":
         return <BsFillArrowDownCircleFill />;
-        break;
+      default:
+        console.log("no direction");
     }
   };
 

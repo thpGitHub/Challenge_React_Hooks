@@ -16,7 +16,7 @@ export default function DivComponent({
   const [photoDiv, setPhotoDiv] = useState();
 
   useEffect(() => {
-    if (photo === null || photo.length == 0) {
+    if (photo === null || photo.length === 0) {
       return;
     }
     console.log("photo in useEffect DivComponent", photo);
@@ -38,6 +38,8 @@ export default function DivComponent({
       case "down":
         onChangeDivOrderDown(indexDiv, order);
         break;
+      default:
+        console.log("no direction");
     }
   };
 

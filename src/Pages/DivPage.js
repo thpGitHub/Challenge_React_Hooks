@@ -87,6 +87,8 @@ export default function DivPages() {
           divsOrders2[indexDiv] = 6;
           setDivsOrders(divsOrders2);
           break;
+        default:
+          console.log("no order");
       }
     }
     /*
@@ -139,6 +141,8 @@ export default function DivPages() {
           divsOrders2[indexDiv] = 8;
           setDivsOrders(divsOrders2);
           break;
+        default:
+          console.log("no order");
       }
     }
   };
@@ -193,6 +197,8 @@ export default function DivPages() {
           divsOrders2[indexDiv] = 9;
           setDivsOrders(divsOrders2);
           break;
+        default:
+          console.log("no order");
       }
     }
 
@@ -254,6 +260,8 @@ export default function DivPages() {
           divsOrders2[indexDiv] = 9;
           setDivsOrders(divsOrders2);
           break;
+        default:
+          console.log("no order");
       }
     }
   };
@@ -261,13 +269,13 @@ export default function DivPages() {
   const handleChangeQuery = (changeQuery) => {
     setQuery(changeQuery);
   };
-  const ErrorDisplay = ({ error }) => {
-    return (
-      <div style={{ color: "red" }}>
-        Une erreur est survenue lors de la recherche
-      </div>
-    );
-  };
+  // const ErrorDisplay = ({ error }) => {
+  //   return (
+  //     <div style={{ color: "red" }}>
+  //       Une erreur est survenue lors de la recherche
+  //     </div>
+  //   );
+  // };
 
   return (
     <>
